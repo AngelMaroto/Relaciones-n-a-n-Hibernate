@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="725.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+   <children>
+      <Text fill="#ff6000" layoutX="242.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EQUIPOS DE BALONCESTO">
+         <font>
+            <Font name="Arial Nova Bold" size="36.0" />
+         </font>
+      </Text>
+      <ComboBox layoutX="117.0" layoutY="152.0" prefWidth="150.0" />
+      <Text fill="#ff6000" layoutX="14.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EQUIPOS:">
+          <font>
+              <Font name="Arial Nova Bold" size="18.0" />
+          </font>
+      </Text>
+   </children>
+</AnchorPane>
