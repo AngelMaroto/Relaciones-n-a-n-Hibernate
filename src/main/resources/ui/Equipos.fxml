@@ -1,22 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="725.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
-   <children>
+<AnchorPane prefHeight="794.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.angel.practicahibernatenan.controller.EquiposController">
       <Text fill="#ff6000" layoutX="242.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EQUIPOS DE BALONCESTO">
          <font>
             <Font name="Arial Nova Bold" size="36.0" />
          </font>
       </Text>
-      <ComboBox layoutX="117.0" layoutY="152.0" prefWidth="150.0" />
-      <Text fill="#ff6000" layoutX="14.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EQUIPOS:">
+      <ComboBox fx:id="cmbEquipos" layoutX="195.0" layoutY="314.0" prefWidth="150.0" />
+      <Text fill="#ff6000" layoutX="41.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipos">
           <font>
               <Font name="Arial Nova Bold" size="18.0" />
           </font>
       </Text>
-   </children>
+      <Button fx:id="btnImportarJSON" layoutX="43.0" layoutY="385.0" mnemonicParsing="false" style="-fx-background-color: #FFD700;" text="Importar JSON">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Text fill="#ff6000" layoutX="41.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Jugador">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtNombreJugador" layoutX="193.0" layoutY="149.0" promptText="Ej: Miguel Herrera" />
+      <Text fill="#ff6000" layoutX="42.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edad">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtEdad" layoutX="194.0" layoutY="203.0" promptText="Ej: 25" />
+      <Text fill="#ff6000" layoutX="43.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dorsal">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtDorsal" layoutX="195.0" layoutY="259.0" promptText="Ej: 8" />
+      <Button fx:id="btnLimpiar" layoutX="213.0" layoutY="385.0" mnemonicParsing="false" text="Limpiar Campos" textFill="#ff6000">
+         <font>
+            <Font size="14.0" />
+         </font>
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
+      </Button>
+      <ComboBox fx:id="cmbPartidos" layoutX="656.0" layoutY="149.0" prefWidth="150.0" />
+      <Text fill="#ff6000" layoutX="484.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Partidos Disponibles">
+         <font>
+            <Font name="Arial Nova Bold" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnAnadir" layoutX="484.0" layoutY="204.0" mnemonicParsing="false" text="Añadir Partido" textFill="#ff6000" />
+      <TableView fx:id="tablePartidosJugador" layoutX="484.0" layoutY="241.0" prefHeight="105.0" prefWidth="430.0">
+        <columns>
+          <TableColumn fx:id="colIdPartidoJugador" prefWidth="70.0" text="Id Partido" />
+          <TableColumn fx:id="colPartidosJugador" prefWidth="359.0" text="Partidos Convocado" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnEliminarPartidoJugador" layoutX="484.0" layoutY="388.0" mnemonicParsing="false" text="Eliminar Partido" textFill="#ff6000">
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
+      </Button>
+      <TableView fx:id="tableJugadores" layoutX="43.0" layoutY="482.0" prefHeight="200.0" prefWidth="878.0">
+        <columns>
+            <TableColumn fx:id="colNombre" prefWidth="291.0" text="Nombre" />
+            <TableColumn fx:id="colEdad" prefWidth="110.0" text="Edad" />
+            <TableColumn fx:id="colDorsal" prefWidth="153.0" text="Dorsal" />
+            <TableColumn fx:id="colEquipo" prefWidth="323.0" text="Equipo" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnGuardar" layoutX="89.0" layoutY="719.0" mnemonicParsing="false" style="-fx-background-color: #4CAF50;" text="Guardar Jugador" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnModificar" layoutX="287.0" layoutY="719.0" mnemonicParsing="false" style="-fx-background-color: #ffc107;" text="Modificar Jugador" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
+      </Button>
+      <Button fx:id="btnBorrar" layoutX="490.0" layoutY="719.0" mnemonicParsing="false" style="-fx-background-color: #dc3545;" text="Borrar Jugador" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
+      </Button>
+      <Button fx:id="btnDeshacer" layoutX="688.0" layoutY="719.0" mnemonicParsing="false" style="-fx-background-color: #17a2b8;" text="Deshacer Borrado" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+          <cursor>
+              <Cursor fx:constant="HAND" />
+          </cursor>
+      </Button>
 </AnchorPane>

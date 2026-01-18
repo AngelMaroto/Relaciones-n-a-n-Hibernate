@@ -1,50 +1,42 @@
 [
   {
-    "nombreEquipo": "Universidad de Salamanca"
+    "nombreEquipo": "Real Valladolid Baloncesto",
+    "localidad": "Valladolid"
   },
   {
-    "nombreEquipo": "Adarsa Maristas"
+    "nombreEquipo": "CB Zamora",
+    "localidad": "Zamora"
   },
   {
-    "nombreEquipo": "Caja Rural RDL"
+    "nombreEquipo": "Clínica Ponferrada SDP",
+    "localidad": "Ponferrada"
   },
   {
-    "nombreEquipo": "Baloncesto La Flecha"
+    "nombreEquipo": "Óbila Club de Basket",
+    "localidad": "Ávila"
   },
   {
-    "nombreEquipo": "CD Universidad de Valladolid"
+    "nombreEquipo": "CB Tormes",
+    "localidad": "Salamanca"
   },
   {
-    "nombreEquipo": "CB Aldeamayor"
+    "nombreEquipo": "Club Soria Baloncesto",
+    "localidad": "Soria"
   },
   {
-    "nombreEquipo": "Club de Baloncesto Palencia"
+    "nombreEquipo": "CD Claret",
+    "localidad": "Segovia"
   },
   {
-    "nombreEquipo": "San Pablo Burgos"
+    "nombreEquipo": "Basket León",
+    "localidad": "León"
   },
   {
-    "nombreEquipo": "Súper Agropal Palencia"
+    "nombreEquipo": "CB Santa Marta",
+    "localidad": "Santa Marta de Tormes"
   },
   {
-    "nombreEquipo": "CD Maristas"
-  },
-  {
-    "nombreEquipo": "CD Filipenses"
-  },
-  {
-    "nombreEquipo": "CD Nuestra Señora de la Merced"
-  },
-  {
-    "nombreEquipo": "CD Palencia Baloncesto"
-  },
-  {
-    "nombreEquipo": "CB Tizona Univ. Burgos"
-  },
-  {
-    "nombreEquipo": "Baloncesto Arroyo"
-  },
-  {
-    "nombreEquipo": "CB Villa de Aranda"
+    "nombreEquipo": "CD Base",
+    "localidad": "Segovia"
   }
 ]
