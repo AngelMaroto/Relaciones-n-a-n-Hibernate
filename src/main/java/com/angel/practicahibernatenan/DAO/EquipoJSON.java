@@ -13,13 +13,20 @@ public class EquipoJSON {
     private static final ObjectMapper JSON_MAPPER = new ObjectMapper();
 
     private static class EquipoDTO {
+
         @JsonProperty("nombreEquipo")
         private String nombreEquipo;
+
         @JsonProperty("localidad")
         private String localidad;
 
-        public String getNombreEquipo() { return nombreEquipo; }
-        public String getLocalidad() { return localidad; }
+        public String getNombreEquipo() {
+            return nombreEquipo;
+        }
+
+        public String getLocalidad() {
+            return localidad;
+        }
     }
 
     public static List<Equipo> importar(File archivo) throws IOException {

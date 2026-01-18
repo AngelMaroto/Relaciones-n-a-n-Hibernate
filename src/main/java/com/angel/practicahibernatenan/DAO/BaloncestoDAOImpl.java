@@ -26,7 +26,6 @@ public class BaloncestoDAOImpl implements BaloncestoDAO {
     @Override
     public List<Partido> listarPartidos() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            // Usamos LEFT JOIN FETCH para traer los equipos de una vez
             String hql = "SELECT DISTINCT p FROM Partido p " +
                     "LEFT JOIN FETCH p.equipoLocal " +
                     "LEFT JOIN FETCH p.equipoVisitante";

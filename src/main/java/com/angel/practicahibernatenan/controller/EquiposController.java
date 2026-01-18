@@ -106,7 +106,6 @@ public class EquiposController {
 
     private void guardarJugador(ActionEvent event) {
         try {
-            // 1. Validaciones
             if (!Validador.esTextoValido(txtNombreJugador.getText())) throw new Exception("Nombre vacío");
             int edad = Integer.parseInt(txtEdad.getText());
             int dorsal = Integer.parseInt(txtDorsal.getText());
@@ -115,30 +114,23 @@ public class EquiposController {
             if (!Validador.esDorsalValido(dorsal)) throw new Exception("Dorsal inválido (0-99)");
             if (cmbEquipos.getValue() == null) throw new Exception("Selecciona un equipo");
 
-            // 2. Lógica para distinguir si es NUEVO o EDICIÓN
             Jugador jugadorAGuardar;
             Button botonPulsado = (Button) event.getSource();
             Jugador seleccionado = tableJugadores.getSelectionModel().getSelectedItem();
 
             if (botonPulsado == btnModificar) {
-                // MODO EDICIÓN: Usamos el objeto EXISTENTE (para no perder la versión)
                 if (seleccionado == null) throw new Exception("Selecciona un jugador para modificar");
                 jugadorAGuardar = seleccionado;
-
-                // Actualizamos sus campos con lo que hay en los textos
                 jugadorAGuardar.setNombre(txtNombreJugador.getText());
                 jugadorAGuardar.setEdad(edad);
                 jugadorAGuardar.setDorsal(dorsal);
             } else {
-                // MODO CREACIÓN: Creamos uno nuevo
                 jugadorAGuardar = new Jugador(txtNombreJugador.getText(), edad, dorsal);
             }
 
-            // 3. Asignamos relaciones (común para ambos casos)
             jugadorAGuardar.setEquipo(cmbEquipos.getValue());
             jugadorAGuardar.setPartidos(new ArrayList<>(partidosEnEdicion));
 
-            // 4. Guardamos
             dao.guardarJugador(jugadorAGuardar);
 
             AlertUtils.mostrarInformacion("Operación realizada con éxito");
@@ -187,7 +179,6 @@ public class EquiposController {
         Partido partidoSeleccionado = cmbPartidos.getValue();
         Equipo equipoJugador = cmbEquipos.getValue();
 
-        // 1. Validaciones básicas de selección
         if (partidoSeleccionado == null) {
             AlertUtils.mostrarError("Por favor, selecciona un partido del desplegable.");
             return;
@@ -198,8 +189,6 @@ public class EquiposController {
             return;
         }
 
-        // 2. Lógica de negocio: ¿Juega su equipo en este partido?
-        // Obtenemos los IDs para comparar de forma segura
         int idEquipoJugador = equipoJugador.getId();
         int idLocal = partidoSeleccionado.getEquipoLocal() != null ? partidoSeleccionado.getEquipoLocal().getId() : -1;
         int idVisitante = partidoSeleccionado.getEquipoVisitante() != null ? partidoSeleccionado.getEquipoVisitante().getId() : -1;
@@ -214,7 +203,6 @@ public class EquiposController {
             return;
         }
 
-        // 3. Si pasa la validación, lo añadimos (evitando duplicados)
         if (!partidosEnEdicion.contains(partidoSeleccionado)) {
             partidosEnEdicion.add(partidoSeleccionado);
         } else {
